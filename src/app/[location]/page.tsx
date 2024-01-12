@@ -1,3 +1,5 @@
+import HomeButton from "../components/HomeButton";
+
 type Props = {
   params: {
     location: string;
@@ -5,9 +7,13 @@ type Props = {
 };
 
 export default function Detail({ params }: Props) {
+  const name = params.location === "seoul" ? "서울" : "";
+
   return (
     <>
-      <h1>Detail {params.location}</h1>
+      <h1>{params.location}의 3일 예보</h1>
+      {/* <Link href="/">홈</Link> */}
+      <HomeButton />
     </>
   );
 }
